@@ -1,30 +1,47 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <p>Todo</p>
+    <div class="n-links">
+      <router-link to="/">Home</router-link> 
+      <router-link to="/todo">Todo</router-link>
+    </div>
+    
   </nav>
   <router-view/>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+body{
+  background:#DBDBDB;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
+  
 }
 
-nav {
-  padding: 30px;
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: auto;
+  background: #FFFFFF;
+  border-radius: 8px; 
+  padding-inline: 42px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.n-links{
+  display: flex;
+  gap: 20px;
+  color: black;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+a{
+text-decoration: none;
 }
 </style>
