@@ -37,11 +37,10 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     name: 'T-Todo',
     data: () => ({
-      todoList:[{id: Math.random(),title:'Go to sleep', added: new Date(), priority: 0, complected: false}],
-
       title:'',
       isEditing: null,
     }),
@@ -77,15 +76,15 @@
         this.isEditing = null;
       },
 
-
       deleteTodo(itemId){
         this.todoList=this.todoList.filter((item) => item.id != itemId)
       },
     },
     computed: {
-        sortList() {
-          return [...this.todoList].sort((a, b) => b.priority - a.priority);
-        }
+      ...mapGetters([ 'sortList']),
+      todoList(){
+        return this.$store.state.todoList.todoList
+      }
     },
   }
 </script>

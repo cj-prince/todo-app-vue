@@ -4,6 +4,7 @@
     <div class="n-links">
       <router-link to="/">Home</router-link> 
       <router-link to="/todo">Todo</router-link>
+      <router-link to="/product">Product</router-link>
     </div>
     
   </nav>
